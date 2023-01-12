@@ -67,15 +67,18 @@ function App() {
       </div>
       <div className="App_Home">
         <div className="Main_letter">TOOLS</div>
+        {/* <div className="Main_des">Let's Change The Angle Of Education</div> */}
         <br /><br /><br />
         {/* <div className="search">
           
         </div> */}
         <div className="Tools_container">
           <CardDiv card={Tools} />
+        </div>
       </div>
+      
+      <div className="footer">Created and maintained by -<span>Tanmay</span> :)</div>
     </div>
-    </div >
   );
 }
 
