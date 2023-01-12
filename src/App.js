@@ -17,7 +17,8 @@ const Tools = [
   {
     name: "DDA Algo",
     des: "Demonstration of Digital defination algorthim",
-    img: "./img/ddalgo.jpg"
+    img: "./img/ddalgo.jpg",
+    link: "/ddaalgo"
   },
   {
     name: "Coming Soon",
@@ -30,8 +31,8 @@ function CardDiv(props) {
   return (
     props.card.map((val, ind) => {
       return (
-        <Link to="/ddaalgo">
-          <Card sx={{ maxWidth: 345 }} key={ind}>
+        <Link to={val.link}>
+          <Card sx={{ maxWidth: 300 }} key={ind}>
             <CardActionArea>
               <CardMedia
                 component="img"
