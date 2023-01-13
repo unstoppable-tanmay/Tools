@@ -9,7 +9,7 @@ import Slider from '@mui/material/Slider';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const Ddalgo = () => {
+const Brehensam = () => {
 
     const [number, setNumber] = useState(20)
     const [screen, setScreen] = useState(false);
@@ -20,7 +20,7 @@ const Ddalgo = () => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    const brehensam = (x0, y0, x1, y1) => {
+    const brehensam = async (x0, y0, x1, y1) => {
         let dx, dy, p, x, y;
         dx = x1 - x0;
         dy = y1 - y0;
@@ -38,28 +38,7 @@ const Ddalgo = () => {
                 p = p + 2 * dy;
             }
             x = x + 1;
-        }
-    }
-    const lineDraw = async (x1, y1, xn, yn) => {
-        try {
-            // brehensam(x1,y1,xn,yn)
-            let dx = xn - x1;
-            let dy = yn - y1;
-            let step;
-            dx > dy ? step = dx : step = dy;
-            let x = x1;
-            let y = y1;
-            setPixel(x, y);
-            let xin = dx / step;
-            let yin = dy / step;
-            for (let i = 1; i <= step; i++) {
-                x = x + xin;
-                y = y + yin;
-                setPixel(Math.round(x), Math.round(y));
-                await sleep(60);
-            }
-        } catch (e) {
-            alert(e)
+            await sleep(60);
         }
     }
     const clearBoard = () => {
@@ -127,7 +106,7 @@ const Ddalgo = () => {
                         <IconButton color="primary" className="icon_button" aria-label="add to shopping cart" onClick={() => { setScreen(false) }} size="large">
                             <ArrowBackIcon fontSize="inherit" />
                         </IconButton>
-                        Digital Difference Algorthim
+                        Brehensam Algorthim
                     </div>
                     <div className="Screen">
                         <RenderGrid />
@@ -137,7 +116,7 @@ const Ddalgo = () => {
                                 size="large"
                                 onClick={() => {
                                     try {
-                                        lineDraw(Number(points[0][0]), Number(points[0][1]), Number(points[1][0]), Number(points[1][1]));
+                                        brehensam(Number(points[0][0]), Number(points[0][1]), Number(points[1][0]), Number(points[1][1]));
                                     } catch (e) {
                                         alert("Select Two Points First!")
                                     }
@@ -164,7 +143,7 @@ const Ddalgo = () => {
                                 <ArrowBackIcon fontSize="inherit" />
                             </IconButton>
                         </Link>
-                        Digital Difference Algorthim
+                        Brehensam Algorthim
                     </div>
                     <div className="before_render_screen">
                         <div className="heading">Enter Screen Resolution</div>
@@ -189,4 +168,4 @@ const Ddalgo = () => {
     )
 }
 
-export default Ddalgo
+export default Brehensam

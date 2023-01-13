@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from "./App"
 import Ddalgo from "./Components/Ddalgo"
+import Brehensam from "./Components/Brehensam"
 import NoPage from "./NoPage"
 
 const Router = () => {
@@ -12,6 +13,7 @@ const Router = () => {
       <Routes>
           <Route index element={<App />} />
           <Route path="/ddaalgo" element={<Ddalgo />} />
+          <Route path="/brehensam" element={<Brehensam />} />
           <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

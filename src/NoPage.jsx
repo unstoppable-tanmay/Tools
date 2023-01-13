@@ -13,7 +13,7 @@ const NoPage = () => {
             <ArrowBackIcon fontSize="inherit" />
           </IconButton>
         </Link>
-        Digital Difference Algorthim
+        Go Back To Tools
       </div>
       <div className="Error_Screen">
         No Page Found

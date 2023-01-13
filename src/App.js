@@ -21,6 +21,12 @@ const Tools = [
     link: "/ddaalgo"
   },
   {
+    name: "Brehensam Algo",
+    des: "Demonstration of Brehensam algorthim",
+    img: "./img/brehensam.png",
+    link: "/brehensam"
+  },
+  {
     name: "Coming Soon",
     des: "Coming Soon the next algorthim...",
     img: "./img/coming_soon.webp"
@@ -67,9 +73,8 @@ function App() {
       </div>
       <div className="App_Home">
         <div className="Main_letter">TOOLS</div>
-        {/* <div className="Main_des">Let's Change The Angle Of Education</div> */}
-        <br /><br /><br />
-        {/* <div className="search">
+        {/* <div className="Main_des">Let's Change The Angle Of Education</div>
+        <div className="search">
           
         </div> */}
         <div className="Tools_container">
