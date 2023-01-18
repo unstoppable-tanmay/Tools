@@ -10,7 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { obsidian } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { gml } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const Ddalgo = () => {
 
@@ -138,7 +138,7 @@ const Ddalgo = () => {
                                 Clear
                             </Button>
                         </div>
-                        <SyntaxHighlighter className="CodeBlock" language="javascript" style={obsidian} showLineNumbers={true} wrapLines={true} customStyle={{display: "block",padding:"28px 10px 10px 10px",overFlowX:"scroll"}}> 
+                        <SyntaxHighlighter className="CodeBlock" language="javascript" style={gml} showLineNumbers={true} wrapLines={true} customStyle={{display: "block",padding:"28px 10px 10px 10px",overFlowX:"scroll"}}> 
 {`const lineDraw = (x1, y1, xn, yn) => {
     try {
         let dx = xn - x1;
