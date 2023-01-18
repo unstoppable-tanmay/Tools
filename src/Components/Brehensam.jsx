@@ -9,6 +9,9 @@ import Slider from '@mui/material/Slider';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { obsidian } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
 const Brehensam = () => {
 
     const [number, setNumber] = useState(20)
@@ -21,25 +24,32 @@ const Brehensam = () => {
     }
 
     const brehensam = async (x0, y0, x1, y1) => {
-        let dx, dy, p, x, y;
-        dx = x1 - x0;
-        dy = y1 - y0;
-        x = x0;
-        y = y0;
-        p = 2 * dy - dx;
-        while (x < x1) {
-            if (p >= 0) {
-                setPixel(x, y);
-                y = y + 1;
-                p = p + 2 * dy - 2 * dx;
-            }
-            else {
-                setPixel(x, y);
-                p = p + 2 * dy;
-            }
-            x = x + 1;
-            await sleep(60);
+        if(x0>x1 || y0>y1){
+            [x0,y0,x1,y1]=[x1,y1,x0,y0]
         }
+        try{
+            let dx, dy, p, x, y;
+            dx = x1 - x0;
+            dy = y1 - y0;
+            x = x0;
+            y = y0;
+            p = 2 * dy - dx;
+            setPixel(x, y);
+            for(var i=1; i<=dx; i++){
+                if (p < 0) {
+                    p = p + 2 * dy;
+                    x=x+1;
+                    setPixel(x, y);
+                }
+                else {
+                    p = p + 2 * (dy - dx);
+                    y = y + 1;
+                    x=x+1;
+                    setPixel(x, y);
+                }
+                await sleep(60);
+            }
+        }catch(e){alert(e)}
     }
     const clearBoard = () => {
         document.querySelectorAll(".cols").forEach((val) => { val.style.background = "#FF000020" });
@@ -133,6 +143,29 @@ const Brehensam = () => {
                                 Clear
                             </Button>
                         </div>
+                        
+                        <SyntaxHighlighter className="CodeBlock" language="javascript" style={obsidian} showLineNumbers={true} wrapLines={true} customStyle={{display: "block",padding:"28px 10px 10px 10px",overFlowX:"scroll"}}> 
+{`const bresenham = (x0, y0, x1, y1) => {
+    let dx, dy, p, x, y;
+    dx = x1 - x0;
+    dy = y1 - y0;
+    x = x0;
+    y = y0;
+    p = 2 * dy - dx;
+    while (x < x1) {
+        if (p >= 0) {
+            setPixel(x, y);
+            y = y + 1;
+            p = p + 2 * dy - 2 * dx;
+        }
+        else {
+            setPixel(x, y);
+            p = p + 2 * dy;
+        }
+        x = x + 1;
+    }
+}`}
+                        </SyntaxHighlighter>
                     </div>
                 </div>
             ) : (

@@ -9,6 +9,9 @@ import Slider from '@mui/material/Slider';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { obsidian } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
 const Ddalgo = () => {
 
     const [number, setNumber] = useState(20)
@@ -19,30 +22,11 @@ const Ddalgo = () => {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-
-    const brehensam = (x0, y0, x1, y1) => {
-        let dx, dy, p, x, y;
-        dx = x1 - x0;
-        dy = y1 - y0;
-        x = x0;
-        y = y0;
-        p = 2 * dy - dx;
-        while (x < x1) {
-            if (p >= 0) {
-                setPixel(x, y);
-                y = y + 1;
-                p = p + 2 * dy - 2 * dx;
-            }
-            else {
-                setPixel(x, y);
-                p = p + 2 * dy;
-            }
-            x = x + 1;
-        }
-    }
     const lineDraw = async (x1, y1, xn, yn) => {
+        if(x1>xn || y1>yn){
+            [x1,y1,xn,yn]=[xn,yn,x1,y1]
+        }
         try {
-            // brehensam(x1,y1,xn,yn)
             let dx = xn - x1;
             let dy = yn - y1;
             let step;
@@ -154,6 +138,28 @@ const Ddalgo = () => {
                                 Clear
                             </Button>
                         </div>
+                        <SyntaxHighlighter className="CodeBlock" language="javascript" style={obsidian} showLineNumbers={true} wrapLines={true} customStyle={{display: "block",padding:"28px 10px 10px 10px",overFlowX:"scroll"}}> 
+{`const lineDraw = (x1, y1, xn, yn) => {
+    try {
+        let dx = xn - x1;
+        let dy = yn - y1;
+        let step;
+        dx > dy ? step = dx : step = dy;
+        let x = x1;
+        let y = y1;
+        setPixel(x, y);
+        let xin = dx / step;
+        let yin = dy / step;
+        for (let i = 1; i <= step; i++) {
+            x = x + xin;
+            y = y + yin;
+            setPixel(Math.round(x), Math.round(y));
+        }
+    } catch (e) {
+        alert(e)
+    }
+}`}
+                        </SyntaxHighlighter>
                     </div>
                 </div>
             ) : (
