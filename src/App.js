@@ -27,6 +27,12 @@ const Tools = [
     link: "/brehensam"
   },
   {
+    name: "Midpoint Circle Draw",
+    des: "Lets Draw the Circle By Midpoint Circle Drawing",
+    img: "https://videocdn.geeksforgeeks.org/geeksforgeeks/Midpointcircledrawingalgorithm/MidpointCircleDrawingAlgorithm20220325121813-small.png",
+    link: "/circledraw"
+  },
+  {
     name: "Coming Soon",
     des: "Coming Soon the next algorthim...",
     img: "./img/coming_soon.webp"
