@@ -78,7 +78,7 @@ const CircleDraw = () => {
         }
         return (
             <ul className="parrent" id="parrent">
-                {createRows(screenRes+5)}
+                {createRows(screenRes+3)}
             </ul>
         )
     }
@@ -158,7 +158,7 @@ const CircleDraw = () => {
                                 valueLabelDisplay="auto"
                                 step={parseInt((screenRes/2)/10)}
                                 min={parseInt((screenRes/2)/10)}
-                                max={parseInt(screenRes/2)}
+                                max={parseInt(screenRes/2-5)}
                             />
                             <Button variant="contained" size="large" onClick={() => setScreen(true)} fontSize="inherit">Draw</Button>
                         </div>
