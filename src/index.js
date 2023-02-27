@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from "./App"
-import Ddalgo from "./Components/Ddalgo"
-import Brehensam from "./Components/Brehensam"
+import Ddalgo from "./Components/line_draw/Ddalgo"
+import Brehensam from "./Components/line_draw/Brehensam"
 import NoPage from "./NoPage"
-import CircleDraw from "./Components/CircleDraw"
+import CircleDraw from "./Components/circle_draw/CircleDraw"
+import Scheduling from './Components/scheduling/Scheduling';
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
           <Route path="/ddaalgo" element={<Ddalgo />} />
           <Route path="/brehensam" element={<Brehensam />} />
           <Route path="/circledraw" element={<CircleDraw />} />
+          <Route path="/scheduling" element={<Scheduling />} />
           <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

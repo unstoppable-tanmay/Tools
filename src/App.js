@@ -33,6 +33,12 @@ const Tools = [
     link: "/circledraw"
   },
   {
+    name: "Scheduling Algorithms",
+    des: "All type of svheduling alg..",
+    img: "https://media.geeksforgeeks.org/wp-content/uploads/20220526113439/CPUSchedulingAlgorithmsinOperatingSystems3.jpg",
+    link: "/scheduling"
+  },
+  {
     name: "Coming Soon",
     des: "Coming Soon the next algorthim...",
     img: "./img/coming_soon.webp"

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 
-import "./Ddalgo.css"
+import "../line_draw/Ddalgo.css"
 
 import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
@@ -104,7 +104,7 @@ const CircleDraw = () => {
                     <div className="Screen">
                         <RenderGrid />
                         {/* onClick={circleBres(11,11,radius)} */}
-                        <Button variant="contained" size="large" onClick={()=>circleBres(screenRes/2+3,screenRes/2+3,radius)} fontSize="inherit">Draw</Button>
+                        <Button variant="contained" size="large" onClick={()=>circleBres(screenRes/2+1,screenRes/2+1,radius)} fontSize="inherit">Draw</Button>
                         <SyntaxHighlighter className="CodeBlock" language="javascript" style={gml} showLineNumbers={true} wrapLines={true} customStyle={{ display: "block", padding: "28px 10px 10px 10px", overFlowX: "scroll" }}>
                             {`void circleBres(int xc, int yc, int r){
     int x = 0, y = r;
@@ -158,7 +158,7 @@ const CircleDraw = () => {
                                 valueLabelDisplay="auto"
                                 step={parseInt((screenRes/2)/10)}
                                 min={parseInt((screenRes/2)/10)}
-                                max={parseInt(screenRes/2-5)}
+                                max={parseInt(screenRes/2)}
                             />
                             <Button variant="contained" size="large" onClick={() => setScreen(true)} fontSize="inherit">Draw</Button>
                         </div>
